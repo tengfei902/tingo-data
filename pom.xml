@@ -157,6 +157,14 @@
 			<artifactId>commons-logging</artifactId>
 			<version>${common-logging.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>5.1.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
