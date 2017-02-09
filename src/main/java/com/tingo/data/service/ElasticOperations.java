@@ -11,6 +11,7 @@ import java.util.Map;
 public interface ElasticOperations extends BaseOperations {
     //创建索引
     boolean createIndex(String index);
+    boolean createIndex(String index,String settings);
     <T> boolean createIndex(Class<T> dataType);
     boolean checkIfIndexExist(String index);
     boolean deleteIndex(String index);
