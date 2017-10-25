@@ -1,7 +1,8 @@
-package com.tingo.data.client;
+package com.tingo.data.client.impl;
 
+import com.tingo.data.client.ClientFactory;
 import com.tingo.data.config.DataConfig;
-import com.tingo.data.config.ElasticDataConfig;
+import com.tingo.data.config.impl.ElasticDataConfig;
 import org.elasticsearch.client.transport.TransportClient;
 
 /**

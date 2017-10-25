@@ -6,7 +6,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 
-	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+	<bean id="weaver" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
 		<!-- 基本属性 url、user、password -->
 		<property name="url" value="${main.db.jdbcUrl}" />
@@ -42,12 +42,12 @@
 
 
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<constructor-arg ref="dataSource" />
+		<constructor-arg ref="weaver" />
 	</bean>
 
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="weaver" />
 	</bean>
 
 	<!-- proxy-target-class=true 表示只扫描实现类（子类）方法上的 @Transactional 注解 -->
@@ -59,8 +59,8 @@
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="classpath:xml/**/*Mapper.xml" />
+		<property name="dataSource" ref="weaver" />
+		<property name="mapperLocations" value="classpath:mapper/weaver/*Mapper.xml" />
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

@@ -1,4 +1,6 @@
-package com.tingo.data.config;
+package com.tingo.data.config.impl;
+
+import com.tingo.data.config.DataConfig;
 
 /**
  * Created by tengfei on 2017/1/27.

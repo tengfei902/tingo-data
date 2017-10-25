@@ -1,7 +1,8 @@
 package com.tingo.data.client;
 
 import com.tingo.data.BaseTestCase;
-import com.tingo.data.config.ElasticDataConfig;
+import com.tingo.data.client.impl.ElasticClientFactory;
+import com.tingo.data.config.impl.ElasticDataConfig;
 import com.tingo.data.service.impl.ElasticSearchTemplate;
 import org.elasticsearch.client.transport.TransportClient;
 import org.junit.Test;
